@@ -1,0 +1,97 @@
+/* ===== BUSCADOR DE CANCIONES ===== */
+
+.main__izquierda--tubiblioteca {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.main__izquierda--tubiblioteca div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main__izquierda--tubiblioteca .global__texto--comun {
+    color: #FFE6F0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Campo de búsqueda */
+
+.main__izquierda--buscar {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.25rem;
+}
+
+.main__izquierda--buscarlabel {
+    color: #D8CBD8;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.main__izquierda--buscar input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 10px 12px;
+
+    background: #211B27;
+    color: #FFFFFF;
+
+    border: 1px solid #514052;
+    border-radius: 9px;
+    outline: none;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.main__izquierda--buscar input::placeholder {
+    color: #A99BAE;
+}
+
+.main__izquierda--buscar input:focus {
+    border-color: #F08AB8;
+    box-shadow: 0 0 0 3px rgba(240, 138, 184, 0.12);
+}
+
+.main__izquierda--buscar img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+/* ===== LISTADO DE CANCIONES ===== */
+
+.main__izquierda--listado {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.main__izquierda--listado p {
+    color: #FFE6F0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0; 
+}
+
+
+/* ===== PANTALLAS PEQUEÑAS ===== */
+
+@media (max-width: 600px) {
+    .main__izquierda--buscar {
+        grid-template-columns: 1fr auto;
+    }
+
+    .main__izquierda--buscarlabel {
+        grid-column: 1 / -1;
+    }
+
+}

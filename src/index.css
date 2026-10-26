@@ -1,0 +1,140 @@
+
+/** VARIABLES **/
+
+:root {
+    --color_fondo: #0E0A0F;
+    --color_gris_letras: #A7A7A7;
+    --color_blanco: #FFFFFF;
+    --color_contenedor: #151215;
+    --color_gris: #919293;
+    --color_gris_oscuro: #242424;
+    --color_hover_boton1: #F0F0F0;
+    --transparencia: rgba(0, 0, 0, 0.5);
+    --color_hover_icon1: #333333;
+    --color_hover_artista: #232323;
+    --color_verde: #1ED760;
+    --color_borde: #2D1B23;
+
+    --letra_principal: "Figtree", sans-serif;
+}
+
+/** GLOBALES **/
+
+* {
+    box-sizing: border-box;
+}
+
+.main__principal {
+    @media (min-width: 600px) {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+    }
+
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 24px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(177, 91, 190, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(232, 105, 175, 0.10),
+            transparent 35%
+        ),
+        #121212;
+
+    color: #F3F4F4;
+    font-family: var(--letra_principal);
+}
+
+footer {
+    height: 10%;
+}
+
+.global__icono--texto {
+    &:hover {
+        color: var(--color_blanco);
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+.global__icono {
+    width: clamp(1.5rem, 2.5vw, 2rem);
+    height: clamp(1.5rem, 2.5vw, 2rem);
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+
+     &:hover {
+        background-color: var(--color_hover_icon1);
+        color: var(--color_blanco);
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+.global__icono--chico {
+    width: clamp(1.2rem, 2.5vw, 1.8rem);
+    height: clamp(1.2rem, 2.5vw, 1.8rem);
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+
+     &:hover {
+        background-color: var(--color_hover_icon1);
+        color: var(--color_blanco);
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+.global__texto--comun {
+    color: var(--color_gris_letras);
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight:600;
+}
+
+.global__texto--chico {
+    color: var(--color_gris_letras);
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-weight:500;
+}
+
+.global__texto--muychico {
+    color: var(--color_gris_letras);
+    font-size: 0.8rem;
+    font-weight:400;
+}
+
+.global__texto--claro {
+    color: var(--color_blanco);
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-weight:500;
+}
+
+.global__contenedor {
+    background-color: var(--color_contenedor);
+    border-radius: 0.5rem;
+    /**display: flex;**/
+    flex-direction: column;
+    padding: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    gap: 1rem;
+    margin-bottom:0.5rem;
+    border: 1px solid var(--color_borde);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+

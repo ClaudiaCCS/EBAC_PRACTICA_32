@@ -1,0 +1,256 @@
+/* CONTENEDOR PRINCIPAL */
+.detalle__album--pagina {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 24px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(177, 91, 190, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(232, 105, 175, 0.10),
+            transparent 35%
+        ),
+        #121212;
+
+    color: #F3F4F4;
+}
+
+/* TARJETA DEL ÁLBUM */
+.detalle__album--principal {
+    display: grid;
+    grid-template-columns: minmax(220px, 340px) minmax(0, 1fr);
+    gap: 38px;
+
+    width: 100%;
+    max-width: 1000px;
+    padding: 35px;
+    box-sizing: border-box;
+
+    border: 1px solid rgba(213, 139, 231, 0.28);
+    border-radius: 22px;
+
+    background: rgba(35, 35, 42, 0.92);
+
+    box-shadow:
+        0 0 30px rgba(191, 105, 220, 0.09),
+        0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* PORTADA */
+.detalle__album--portada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.detalle__album--portada img {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* CUANDO NO HAY PORTADA */
+.detalle__album--sportada {
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    border-radius: 16px;
+    background: #29232F;
+    color: #D99AEF;
+    text-align: center;
+}
+
+/* ETIQUETA DECORATIVA */
+.detalle__album--etiqueta {
+    margin: 0;
+
+    color: #D99AEF;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+/* INFORMACIÓN DEL ÁLBUM */
+.detalle__album--informacion {
+    min-width: 0;
+    align-self: center;
+}
+
+.detalle__album--artista {
+    margin: 0 0 10px;
+
+    color: #D58BE7;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* NOMBRE DEL ÁLBUM */
+.detalle__album--informacion h1 {
+    margin: 0;
+
+    color: #FFFFFF;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+/* LÍNEA DECORATIVA */
+.detalle__album--separador {
+    width: 75px;
+    height: 3px;
+    margin: 22px 0;
+
+    border-radius: 5px;
+    background: linear-gradient(90deg, #D58BE7, #F08AC8);
+}
+
+/* DATOS DEL ÁLBUM */
+.detalle__album--datos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.detalle__album--datos p {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    margin: 0;
+    padding: 14px;
+
+    border: 1px solid rgba(213, 139, 231, 0.13);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.detalle__album--datos span {
+    color: #AAA6B1;
+    font-size: 12px;
+}
+
+.detalle__album--datos strong {
+    color: #F3D8FF;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* DESCRIPCIÓN */
+.detalle__album--descripcion {
+    margin-top: 26px;
+}
+
+.detalle__album--descripcion h2 {
+    margin: 0 0 12px;
+
+    color: #E4B4F4;
+    font-size: 18px;
+}
+
+.detalle__album--descripcion p {
+    margin: 0;
+
+    color: #C4C0CA;
+    font-size: 14px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+/* MENSAJES DE CARGA Y ERROR */
+.detalle__album--mensaje {
+    max-width: 600px;
+    padding: 20px;
+
+    color: #E4B4F4;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 700px) {
+    .detalle__album--pagina {
+        padding: 24px 14px;
+    }
+
+    .detalle__album--principal {
+        grid-template-columns: 1fr;
+        gap: 26px;
+
+        max-width: 480px;
+        padding: 22px;
+    }
+
+    .detalle__album--portada img {
+        max-width: 260px;
+    }
+
+    .detalle__album--informacion h1 {
+        font-size: 29px;
+    }
+
+    .detalle__album--datos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BOTÓN VOLVER AL INICIO */
+.detalle__album--volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 24px;
+    padding: 10px 16px;
+
+    border: 1px solid rgba(213, 139, 231, 0.5);
+    border-radius: 8px;
+
+    background: transparent;
+    color: #D99AEF;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.detalle__album--volver:hover {
+    background: rgba(213, 139, 231, 0.12);
+    border-color: #D58BE7;
+    color: #FFFFFF;
+    box-shadow: 0 0 14px rgba(213, 139, 231, 0.15);
+    transform: translateX(-3px);
+}
+
+.detalle__album--volver:focus-visible {
+    outline: 2px solid #F08AC8;
+    outline-offset: 3px;
+}

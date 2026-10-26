@@ -1,0 +1,130 @@
+/* Fila de cada canción */
+
+.main__central--cancion {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(75px, 0.8fr) auto;
+    align-items: center;
+    gap: 12px;
+
+    padding: 9px 8px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.main__central--cancion:hover {
+    background-color: rgba(240, 138, 184, 0.07);
+    border-color: rgba(240, 138, 184, 0.18);
+}
+
+/* Columnas internas */
+
+.main__central--cancion > div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+}
+
+/* Reproductor y portada */
+
+.main__central--cancion .global__icono--chico {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.main__central--imgcancion {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.main__central--cancion button {
+    background-color: transparent;
+}
+
+/* Nombre de la canción */
+
+.main__central--cancion .global__texto--claro {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0;
+}
+
+/* Nombre del artista */
+
+.main__central--cancion .global__texto--muychico {
+    color: #C4B4CB;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* Duración */
+
+.main__central--cancion .global__texto--chico {
+    color: #E5D8E8;
+    font-size: 0.85rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Icono de agregar o eliminar */
+
+.main__central--cancion .global__icono {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    object-fit: contain;
+    cursor: pointer;
+
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.main__central--cancion .global__icono:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px rgba(255, 126, 190, 0.5));
+}
+
+.album__ver--detalles {
+    display: block;
+    margin-top: 8px;
+    padding: 5px 10px;
+    border: 1px solid #C58AE8;
+    border-radius: 6px;
+    background: transparent;
+    color: #C58AE8;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.album__ver--detalles:hover {
+    background-color: #C58AE8;
+    color: #FFFFFF;
+}
+
+
+/* ===== PANTALLAS PEQUEÑAS ===== */
+
+@media (max-width: 600px) {
+
+    .main__central--cancion {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+    }
+
+    .main__central--cancion > div:nth-child(2) {
+        display: none;
+    }
+
+    .main__central--cancion .global__texto--claro {
+        overflow-wrap: anywhere;
+    }
+}
